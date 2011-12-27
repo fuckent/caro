@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-
+// writer: Cao Tan Thanh
 var express = require('express')
   , routes = require('./routes')
 
@@ -32,4 +32,4 @@ app.configure('production', function(){
 app.get('/', routes.index);
 
 app.listen(process.env.PORT);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+console.log("Express server listening on port %d in %s mode", app.address().p
