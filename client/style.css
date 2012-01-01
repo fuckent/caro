@@ -1,5 +1,16 @@
+* {
+margin: 0;
+padding: 0;
+}
+
 body {
 font-family: 'Flavors', cursive;
+}
+
+h1 {
+margin: 0px 20px 20px 0px;
+text-location
+
 }
 p  {
 font-size: 20px;
@@ -67,11 +78,9 @@ background-image: -o-linear-gradient(rgb(100,100,100),rgb(200,200,200));
 
 #t {
     float:left;
-    margin: 20px 0 0 0;
 }
 
 #delete_button {
-    margin:20px 0 0 0;
     float:right;
 }
 
@@ -168,6 +177,25 @@ button.focus {
 
 #Log p:nth-child(even) {
   background: #fafafa;
+}
+
+#HeaderBar {
+background: #FAFAFA;
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fafafa',endColorstr='#eaeaea');
+background: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EAEAEA));
+background: -moz-linear-gradient(top,#FAFAFA,#EAEAEA);
+background: -o-linear-gradient(top,#FAFAFA,#EAEAEA);
+position: relative;
+z-index: 10;
+border-bottom: 1px solid #CACACA;
+box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
+margin: 0;
+height: 30px;
+}
+
+#HeaderBar p {
+    float:right;
+    line-height: 30px;
 }
 
 
