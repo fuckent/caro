@@ -12,6 +12,7 @@ var board = null;           // global variable board of game
 var player = 1;             // it determines what player-turn
 var stt = null;
 var count = 10;
+var stateArray = new Array(NCELL)
 
 // Cell class, we need to save the location of a cell on board
 function Cell(row, column) {
@@ -19,6 +20,23 @@ function Cell(row, column) {
     this.column = column;
 }
 
+function initStateArray( ){
+	var i = 0;
+	for (i=0;i<15;i=i+1){
+		stateArray[i] = new Array(NCELL);
+	}
+}
+
+// update state array after check
+function updateStateArray(x,y,num){
+		stateArray[x][y] = num;
+		if(checkWin(x,y,num) == num){winner(cell1, cell2,num);}
+}
+//  Check the cell is checked
+function CellisChecked(x,y){
+	if(stateArray[x][y] == 1 || stateArray[x][y] == 2)return true;
+	return false;
+}
 // This function converts coordinates of click from page coordinates to canvas coordinates
 // only need to know that
 // i copied from this function from a book :-)
@@ -46,39 +64,43 @@ var playerName = ['', 'RED', 'BLUE'];
 function gameBoardOnClick(e) {
     //var draw = [drawX, drawO];
     count --;
-    player = 3 - player;
+    
     var pos = getCursorPosition(e); // pos is locations (row, column) player clicked
+	var state= CellisChecked(pos.column,pos.row);
+	if(!state){
+		player = 3 - player;
+		log(playerName[3-player] + ' tick at (' + pos.row + ', ' + pos.column + ')', 'event');
 
-    log(playerName[3-player] + ' tick at (' + pos.row + ', ' + pos.column + ')', 'event');
 
+		// the below line only draw X/O on screen, we need to do more
+		// now, focus what i type below
+		// fist, we need check that `pos' (cell) is clicked before (a player was chooses it)
+		// so, if that cell is free,
+		//      + save it location on your state of board variable !!! (so important)
+		//      + draw it on screen (the line below)
+		//      + check whether it have a player win a game,
+		//          if have, call winner(cell1, cell2) function to do more!
+		//              (cell1, cell2) are the terminal cells of line which winner got to win the game
+		//      (anyway, i'll code wined() function and some stuff to help you
 
-    // the below line only draw X/O on screen, we need to do more
-    // now, focus what i type below
-    // fist, we need check that `pos' (cell) is clicked before (a player was chooses it)
-    // so, if that cell is free,
-    //      + save it location on your state of board variable !!! (so important)
-    //      + draw it on screen (the line below)
-    //      + check whether it have a player win a game,
-    //          if have, call winner(cell1, cell2) function to do more!
-    //              (cell1, cell2) are the terminal cells of line which winner got to win the game
-    //      (anyway, i'll code wined() function and some stuff to help you
+		// HAVE FUN  :-)
 
-    // HAVE FUN  :-)
+		if (player == 1) {
+			drawX(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
+			updateStateArray(pos.column,pos.row,player);
+			stt.textContent = "[RED TURN]";
+		}
+		else  {
+			drawO(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
+			updateStateArray(pos.column,pos.row,player);
+			stt.textContent = "[BLUE TURN]";
+		}
 
-    if (player == 1) {
-        drawX(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
-        stt.textContent = "[RED TURN]";
-    }
-    else  {
-        drawO(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
-        stt.textContent = "[BLUE TURN]";
-    }
-
-    if (count == 0) {
-        winner(new Cell(4,5), new Cell(7, 8));
-        count = 10;
-    }
-
+		if (count == 0) {
+			winner(new Cell(4,5), new Cell(7, 8));
+			count = 10;
+		}
+	}
 }
 
 // this function called in the first time!
@@ -94,6 +116,7 @@ function runGame() {
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
+    initStateArray();
 }
 
 function drawBoard() {
