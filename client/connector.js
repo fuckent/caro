@@ -22,5 +22,5 @@ function server(site) {
 }
 
 function log(msg, type) {
-    $("#GameLog").append('<p class = "' + type + '">' + msg + '</p>');
+    $("#logs").append('<p class = "' + type + '">' + msg + '</p>');
 }

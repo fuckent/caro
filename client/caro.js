@@ -87,7 +87,7 @@ function runGame() {
     stt.textContent = "[READY]"; // set game status to READY
 
     $('#delete_button').click(function() {
-        $('#GameLog')[0].textContent = null;
+        $('#logs')[0].textContent = null;
         }
     );
 
