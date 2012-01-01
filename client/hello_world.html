@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Hello world
+        </title>
+<link href='http://fonts.googleapis.com/css?family=Flavors' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="style.css" />
+        <!-- a library help us easy with javascipt on browser -->
+        <script src="jquery.js"></script>
+
+        <!-- this js file have funcions to check
+             whether client browser support HTML5 functions-->
+        <script src="modernizr.js"></script>
+
+        <!-- this is main js file, it manages whole game state, decide what player can do, and what message give to player -->
+        <script src="caro.js"></script>
+        <script src="connector.js"></script>
+
+        <script type="text/javascript">
+            // check whether client-browser supports canvas
+            if (Modernizr.canvas) {
+                // TODO:
+            } else {
+                alert('This browser doesn\'t support canvas');
+                // TODO:
+            }
+        </script>
+    </head>
+
+    <!-- call runGame javascript function after this page was loaded -->
+    <body onload="runGame()">
+        <div id = "wrapper">
+            <div id = "container">
+                <div id="header">
+                    <h1>Welcome to Caro world</h1>
+                </div>
+
+                <div id = "Board">
+                    <div id= "Game">
+                        <p>GAME BOARD</p>
+                        <canvas id = "GameBoard" ></canvas>
+                    </div>
+
+                    <div id="Panel">
+                        <p>GAME STATUS</p>
+                        <p id="status">[LOADING...]</p>
+                        <button>Reset</button>
+                    </div>
+                </div>
+
+                <div id = "Log">
+                    <p id ="t">GAME LOGS</p>
+                    <button id = "delete_button">Delete</button>
+                <div id = "GameLog">
+                     <p id="examples" class="event">e.g. try 'hi', 'name', 'age', 'today'</p>
+
+
+
+                </div>
+                </div> <!-- log -->
+
+                <div id = 'footer'>
+                    <center>
+                    <p>Authors : Thong T. Nguyen, Thanh T. Cao</p></center>
+                </div>
+            </div> <!-- #container -->
+        </div>
+
+
+    </body>
+</html>

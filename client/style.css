@@ -1,0 +1,168 @@
+body {
+font-family: 'Flavors', cursive;
+}
+p  {
+font-size: 20px;
+}
+
+#container{
+    padding:20px 40px 40px 60px;
+}
+
+#Board{
+    float: left;
+}
+#Game{
+    float: left;
+}
+#Panel{
+    width: 200px;
+    padding: 0px 10px 10px 10px;
+    float: right;
+}
+
+#Log {
+    float: left;
+    width: 300px;
+}
+
+#GameLog{
+
+
+
+    background: #fdfdfd;
+
+
+    /* Mozilla: */
+    background: -moz-linear-gradient(top, #00FF00, #000000);
+    /* Chrome, Safari:*/
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#ededed), to(#fdfdfd));
+    /* MSIE */
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#00FF00', EndColorStr='#000000', GradientType=0);
+
+background-image: -o-linear-gradient(rgb(100,100,100),rgb(200,200,200));
+
+    height: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    float:left;
+    width: 300px;
+    border:1px solid #efefef;
+}
+
+#footer {
+    display: block;
+    float: left;
+    width: 800px;
+    padding: 20px;
+}
+
+#t {
+    float:left;
+}
+
+#delete_button {
+    margin:16px 0;
+    float:right;
+}
+
+#GameLog p {
+    margin:5px 5px;
+}
+.event {
+    color:#aaa;
+}
+.warning{
+    font-weight:bold;
+
+    color:#CCC;
+}
+
+button {
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: inline-block;
+  text-decoration: none;
+  background: #43a1f7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #43a1f7), color-stop(1, #377ad0));
+  background: -webkit-linear-gradient(top, #43a1f7 0%, #377ad0 100%);
+  background: -moz-linear-gradient(top, #43a1f7 0%, #377ad0 100%);
+  background: linear-gradient(top, #43a1f7 0%, #377ad0 100%);
+  border: 1px solid #2e70c4;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  color: #fff;
+  font-family: "lucida grande", sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1;
+  padding: 3px 10px 5px 10px;
+  text-align: center;
+  text-shadow: 0 -1px 1px #2d6dc0;
+}
+button:hover,
+button.hover {
+  background: darker;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #43a1f7), color-stop(1, #2e70c4));
+  background: -webkit-linear-gradient(top, #43a1f7 0%, #2e70c4 100%);
+  background: -moz-linear-gradient(top, #43a1f7 0%, #2e70c4 100%);
+  background: linear-gradient(top, #43a1f7 0%, #2e70c4 100%);
+  border: 1px solid #2e70c4;
+  cursor: pointer;
+  text-shadow: 0 -1px 1px #2c6bbb;
+}
+button:active,
+button.active {
+  background: #2e70c4;
+  border: 1px solid #2e70c4;
+  border-bottom: 1px solid #2861aa;
+  text-shadow: 0 -1px 1px #2b67b5;
+}
+button:focus,
+button.focus {
+  outline: none;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.40), 0 0 4px 0 #377ad0;
+  -moz-box-shadow: 0 1px 0 0 rgba(255,255,255,0.40), 0 0 4px 0 #377ad0;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.40), 0 0 4px 0 #377ad0;
+}
+
+#Log #GameLog::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#Log #GameLog::-webkit-scrollbar-button:start:decrement,
+#Log #GameLog ::-webkit-scrollbar-button:end:increment {
+  display: block;
+  height: 10px;
+}
+#Log #GameLog::-webkit-scrollbar-button:vertical:increment {
+  background-color: #fff;
+}
+#Log #GameLog::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+}
+#Log #GameLog::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #ccc;
+  -webkit-border-radius: 3px;
+}
+#Log #GameLog::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+}
+
+
+#Log p:nth-child(even) {
+  background: #fafafa;
+}
+
+
