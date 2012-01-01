@@ -1,6 +1,7 @@
 function getChatMessage(){
 	 var input_chat = document.getElementById("input_chat");
 	 var chatms = input_chat.value;
+	 input_chat.value = "";
 	 return chatms;
 }
 
