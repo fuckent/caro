@@ -24,19 +24,173 @@ function initStateArray( ){
 	var i = 0;
 	for (i=0;i<15;i=i+1){
 		stateArray[i] = new Array(NCELL);
+		var j;
+		for(j = 0;j < 15;j++){
+			stateArray[i][j] = 0;
+		}
 	}
 }
 
-// update state array after check
-function updateStateArray(x,y,num){
-		stateArray[x][y] = num;
-		if(checkWin(x,y,num) == num){winner(cell1, cell2,num);}
+function printState( ){
+	var a = "";
+	var i;
+	for(i = 0;i < 15; i = i + 1){
+		var j;
+		for(j = 0;j < 15; j = j + 1){
+			a+= stateArray[i][j];
+		}
+		a += "\n";
+	}
+	alert(a);
 }
+
 //  Check the cell is checked
 function CellisChecked(x,y){
 	if(stateArray[x][y] == 1 || stateArray[x][y] == 2)return true;
 	return false;
 }
+
+function CellisCheckedBy(x,y,num){
+	if(stateArray[x][y] == num)return true;
+	return false;
+}
+
+function checkHor(x){
+	var count = 0;
+	var i;
+	for(i = 0; i < 15;i++){
+		if(CellisCheckedBy(x,i,player)){
+			count++;
+			if(count >= 5)return true;
+		}
+		else{
+			count = 0;
+		}
+	}
+	return false;
+}
+
+function checkVert(y){
+	var count = 0;
+	var i;
+	for(i = 0; i < 15;i++){
+		if(CellisCheckedBy(i,y,player)){
+			count++;
+			if(count >= 5)return true;
+		}
+		else{
+			count = 0;
+		}
+	}
+	return false;
+}
+
+function checkSlash(x,y){
+	//alert("Dang trong checkSlash");
+	var count  = 0;
+	var deltax = x;
+	var deltay = 15 - y;
+	
+	if(deltax > deltay){
+		//alert("deltax > deltay");
+			// lui ve y
+			y = 15;
+			x = x - deltay;
+			while(x < 15){
+				//alert("checking1 "+x+" " +y);
+				if(CellisCheckedBy(x,y,player)){
+					count++;
+					//alert(count);
+					if(count >= 5)return true;
+				}
+				else{
+					count = 0;
+				}
+				x = x + 1;
+				y = y - 1;
+			}
+	}
+	else{
+		//alert("deltax <= deltay");
+			x = 0;
+			y = y + deltax;
+			while(y >= 0){
+				//alert("checking2 "+x+" " +y);
+				if(CellisCheckedBy(x,y,player)){
+					count++;
+					//alert(count);
+					if(count >= 5)return true;
+				}
+				else{
+					count = 0;
+				}
+				x = x + 1;
+				y = y - 1;
+			}
+	}
+	return false;
+}
+
+function checkBackSlash(x,y){
+	var count  = 0;
+	
+	if(x > y){
+			// lui ve y
+			x = x - y;
+			y = 0;
+			while(x < 15){
+				//alert("checking1 "+x+" " +y);
+				if(CellisCheckedBy(x,y,player)){
+					count++;
+					//alert(count);
+					if(count >= 5)return true;
+				}
+				else{
+					count = 0;
+				}
+				x = x + 1;
+				y = y + 1;
+			}
+	}
+	else{
+			y = y - x;
+			x = 0;
+			while(y >= 0){
+				//alert("checking2 "+x+" " +y);
+				if(CellisCheckedBy(x,y,player)){
+					count++;
+					//alert(count);
+					if(count >= 5)return true;
+				}
+				else{
+					count = 0;
+				}
+				x = x + 1;
+				y = y + 1;
+			}
+	}
+	return false;
+}
+function checkWin(x,y){
+	//check ngang
+	if(checkHor(x))winner(x,y);
+	if(checkVert(y))winner(x,y);
+	if(checkSlash(x,y))winner(x,y);
+	if(checkBackSlash(x,y))winner(x,y);
+	return false;
+}
+
+// update state array after check
+function updateStateArray(x,y){
+		stateArray[x][y] = player;
+		//printState();
+		if(checkWin(x,y)){winner(cell1, cell2);}
+}
+
+
+
+
+
 // This function converts coordinates of click from page coordinates to canvas coordinates
 // only need to know that
 // i copied from this function from a book :-)
@@ -87,12 +241,12 @@ function gameBoardOnClick(e) {
 
 		if (player == 1) {
 			drawX(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
-			updateStateArray(pos.column,pos.row,player);
+			updateStateArray(pos.column,pos.row);
 			stt.textContent = "[RED TURN]";
 		}
 		else  {
 			drawO(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
-			updateStateArray(pos.column,pos.row,player);
+			updateStateArray(pos.column,pos.row);
 			stt.textContent = "[BLUE TURN]";
 		}
 
@@ -180,6 +334,12 @@ function drawO(x, y, color) {
 }
 
 function winner(pos1, pos2) {
+	if(player == 2){
+		alert("Red win");
+	}
+	else{
+		alert("Blue win");
+	}
     var x1 = (pos1.row-0.5) * CELL_SIZE  ;
     var y1 = (pos1.column-0.5) * CELL_SIZE;
 
