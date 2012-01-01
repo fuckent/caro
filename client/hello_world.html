@@ -15,7 +15,7 @@
         <!-- this js file have funcions to check
              whether client browser support HTML5 functions-->
         <script src="modernizr.js"></script>
-
+        <script src="chat.js"></script>
         <!-- this is main js file, it manages whole game state, decide what player can do, and what message give to player -->
         <script src="caro.js"></script>
         <script src="connector.js"></script>
@@ -58,13 +58,14 @@
                         <div id="ChatBox">
                             <span class= "title">Chat box</span>
                             <div id="ChatBoxText">
-                            <p> Type here to chat with other people</p>
+								<p> Type here to chat with other people</p>
                             </div>
                             <span class="title">
                                 <input id="input_chat">
-                                <button class="button" id = "sendMSG">Send</button>
+                                <button class="button" id = "sendMSG" onclick="soundbites( )">Send</button>
                             </span>
                         </div>
+                        
                     </div>
                 </div>
 
