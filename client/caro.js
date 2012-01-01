@@ -94,6 +94,7 @@ function runGame() {
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
+    var server = new Server("ws://google");
 }
 
 function drawBoard() {

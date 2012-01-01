@@ -1,6 +1,6 @@
 // this file connect to server and deal with many communicate problems
 
-function server(site) {
+function Server(site) {
     //first, connect to server
     try {
     this.socket = new WebSocket(site);
@@ -17,7 +17,7 @@ function server(site) {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');
     }
     } catch (ex) {
-        log('Error: ' + ex, '');
+        log('Error: ' + ex, 'error');
     }
 }
 
