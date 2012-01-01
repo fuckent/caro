@@ -11,6 +11,7 @@ var XO_RATE = 2/3;          // relative size of X/O with cell
 var board = null;           // global variable board of game
 var player = 1;             // it determines what player-turn
 var stt = null;
+var count = 10;
 var stateArray = new Array(NCELL)
 
 // Cell class, we need to save the location of a cell on board
@@ -216,6 +217,7 @@ var playerName = ['', 'RED', 'BLUE'];
 // so, all we need to solve begin that event
 function gameBoardOnClick(e) {
     //var draw = [drawX, drawO];
+    count --;
 
     var pos = getCursorPosition(e); // pos is locations (row, column) player clicked
     var state= CellisChecked(pos.column,pos.row);
@@ -238,16 +240,20 @@ function gameBoardOnClick(e) {
         // HAVE FUN  :-)
 
         if (player == 1) {
+            stt.textContent = "[RED TURN]";
             drawX(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
             updateStateArray(pos.column,pos.row);
-            stt.textContent = "[RED TURN]";
         }
         else  {
+            stt.textContent = "[BLUE TURN]";
             drawO(pos.column*CELL_SIZE + CELL_SIZE/2, pos.row*CELL_SIZE + CELL_SIZE/2);
             updateStateArray(pos.column,pos.row);
-            stt.textContent = "[BLUE TURN]";
         }
 
+        if (count == 0) {
+            winner(new Cell(4,5), new Cell(7, 8));
+            count = 10;
+        }
     }
 }
 
