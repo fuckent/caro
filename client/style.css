@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Flavors';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Flavors'), local('Flavors-Regular'), url('./7ed-D3MQicPNqc0ZKJ1T1Q.woff') format('woff');
+}
+
 * {
 margin: 0;
 padding: 0;
@@ -91,6 +98,9 @@ background-image: -o-linear-gradient(rgb(100,100,100),rgb(200,200,200));
     float:right;
 }
 
+.annound {
+    color: #00B300;
+}
 .event {
     color:#aaa;
 }
@@ -252,9 +262,7 @@ height: 30px;
 }
 
 #input_chat {
-position:relative;
-/*left:0px;*/
-width: 139px;
+width: 120px;
 height: 25px;
 line-height: 25px;
 float:left;
@@ -263,6 +271,7 @@ vertical-align: middle;
 background: #f0f0f0;
 }
 #sendMSG {
+height: 20px;
 float:right;
 margin: 2px;
 }
