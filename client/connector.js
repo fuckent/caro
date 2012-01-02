@@ -30,6 +30,7 @@ function Server(site) {
     }
 
     this.socket.on('CHAT', function(nick, msg) {
+		showReceiveMess(nick +': ' + msg, 'event');
         log(nick +': ' + msg, 'event');
     });
 
@@ -44,3 +45,8 @@ function Server(site) {
 function log(msg, type) {
     $("#logs").append('<p class = "' + type + '">' + msg + '</p>');
 }
+
+function showReceiveMess(msg, type) {
+    $("#ChatBoxText").append('<p>' + msg + '</p>');
+}
+
