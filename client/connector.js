@@ -23,6 +23,15 @@ function Server(site) {
         return false;
     }
 
+    // JOIN [ROOM ID]
+    this.joinRoom = function (roomid){
+        log('sending JOIN message to server');
+        this.socket.emit('JOIN',roomid);
+    }
+
+
+
+
     try {
     this.socket = new io.connect(site);
 
@@ -32,18 +41,19 @@ function Server(site) {
 
     this.socket.on('CHAT', function(nick, msg) {
         showReceiveMess(nick +': ' + msg, 'event');
+    $('#ChatBoxText').get(0).scrollTop = 10000000;
+
         log(nick +': ' + msg, 'event');
         $('#ChatBoxText').get(0).scrollTop = 10000000;
 
     });
 
-    this.socket.on('JOIN', function(nick, msg) {
-        showReceiveMess(nick +': ' + msg, 'event');
+    this.socket.on('JOIN', function(roomid,status) {
+        if(status == 'WAIT') log('JOIN '+ roomid +' '+ status);
+        else if(status == 'PLAY') log('JOIN '+ roomid +' '+ status);
+        else if(status == 'WATCH') log('JOIN '+ roomid +' '+ status);
     });
 
-    this.socket.on('JOIN', function(nick, msg) {
-
-    });
 
 
 
