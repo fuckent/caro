@@ -33,6 +33,8 @@ function Server(site) {
     this.socket.on('CHAT', function(nick, msg) {
         showReceiveMess(nick +': ' + msg, 'event');
         log(nick +': ' + msg, 'event');
+        $('#ChatBoxText').get(0).scrollTop = 10000000;
+
     });
 
     this.socket.on('JOIN', function(nick, msg) {

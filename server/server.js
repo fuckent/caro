@@ -1,5 +1,5 @@
 var io = require('socket.io').listen(8000);
-var roomList = [];
+var roomList = {};
 
 io.sockets.on('connection', function (socket) {
 
@@ -16,11 +16,13 @@ io.sockets.on('connection', function (socket) {
             roomList[roomID] = [socket];
         } else {
             roomList[roomID].push(socket);
-            roomList[roomID].forEach(function (sk) {
-                sk.emit('JOIN', roomID, 'PLAY');
-            });
+            if (roomList[roomID].length > 2)
+                socket.emit('JOIN', roomID, 'WATCH');
+            else
+                roomList[roomID].forEach(function (sk) {
+                    sk.emit('JOIN', roomID, 'PLAY');
+                });
         }
-
     });
 
     // client call socket.emit('MOVE', x, y);

@@ -272,7 +272,7 @@ function runGame() {
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server('http://caro.nodester.com');
+    server = new Server('http://127.0.0.1:8000');
     initStateArray();
     $('#login').submit(setNickName);
 }
@@ -339,7 +339,7 @@ function winner(pos1, pos2) {
     if (player == 2) {
         log("<b>Red player win!!!</b>", 'annound');
     } else {
-        log("<b>Blue player win!!!</b>", 'annound');
+        log("<b>Blue player win</b>", 'annound');
     }
     var x1 = (pos1.row - 0.5) * CELL_SIZE;
     var y1 = (pos1.column - 0.5) * CELL_SIZE;
