@@ -18,6 +18,7 @@ function Server(site) {
 
     this.setNickName = function() {
         var txt = $('#inputNick').val();
+        this.nick = txt;
         this.socket.emit('NICK', txt);
         return false;
     }
@@ -30,19 +31,19 @@ function Server(site) {
     }
 
     this.socket.on('CHAT', function(nick, msg) {
-		showReceiveMess(nick +': ' + msg, 'event');
+        showReceiveMess(nick +': ' + msg, 'event');
         log(nick +': ' + msg, 'event');
     });
-    
+
     this.socket.on('JOIN', function(nick, msg) {
-		showReceiveMess(nick +': ' + msg, 'event');
+        showReceiveMess(nick +': ' + msg, 'event');
     });
-    
+
     this.socket.on('JOIN', function(nick, msg) {
-		
+
     });
-    
-    
+
+
 
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');
