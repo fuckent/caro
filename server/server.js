@@ -1,4 +1,9 @@
 var io = require('socket.io').listen(8000);
+io.set('log level', 1);                    // reduce logging
+
+
+var winstate = require('./winstate');
+
 var roomList = {};
 
 io.sockets.on('connection', function (socket) {
@@ -6,37 +11,96 @@ io.sockets.on('connection', function (socket) {
     // client call socket.emit('NICK', ..player name here);
     socket.on('NICK', function (name) {
         socket.playerName = name;
-        console.log(name + ' connected');
+        logs('User: ' + name + ' connected');
     });
 
     socket.on('JOIN', function (roomID) {
         socket.roomId = roomID;
         if (roomList[roomID] == undefined) {
             socket.emit('JOIN', roomID, 'WAIT');
-            roomList[roomID] = [socket];
+            var rm = new room(roomID);
+            roomList[roomID] = rm;
+            rm.listUser.push(socket);
+            rm.A = socket;
+            rm.turn = 1;
+            logs(socket.playerName + ' created room ' + roomID);
         } else {
-            roomList[roomID].push(socket);
-            if (roomList[roomID].length > 2)
+            var rm = roomList[roomID];
+            socket.roomId = roomID;
+            rm.listUser.push(socket);
+            if (rm.listUser.length > 2) {
                 socket.emit('JOIN', roomID, 'WATCH');
-            else
-                roomList[roomID].forEach(function (sk) {
+                logs('User ' + socket.playerName + ' is watching room ' + roomID);
+            }
+            else {
+                rm.listUser.forEach(function (sk) {
                     sk.emit('JOIN', roomID, 'PLAY');
                 });
+                rm.B = socket;
+                logs('The second player ' + socket.playerName +' had joined room ' + socket.roomId);
+            }
         }
     });
 
     // client call socket.emit('MOVE', x, y);
-    socket.on('MOVE', function (x, y){
-        roomList[socket.roomId].forEach(function (sk){
-            sk.emit('MOVE', socket.playerName, x, y);
-        });
+    socket.on('MOVE', function (x, y) {
+        var rm = roomList[socket.roomId];
+        try {
+            if (rm.listUser.length <2) throw 'DENIED';
 
-        console.log(socket.playerName + ' tick ' + x + ', ' + y);
+            var plr = rm.turn == 1 ? rm.A : rm.B;
+            if (plr != socket) throw 'DENIED';
+
+            if (rm.board.CellisChecked(x, y)) throw 'DENIED'
+
+            rm.board.move(x, y, rm.turn);
+            roomList[socket.roomId].listUser.forEach(function (sk) {
+                sk.emit('MOVE', socket.playerName, x, y);
+            });
+
+
+            console.log(socket.playerName + ' tick ' + x + ', ' + y);
+
+            if (rm.board.checkWin(x, y)) {
+
+                roomList[socket.roomId].listUser.forEach(function (sk) {
+                    sk.emit('WIN', plr.playerName);
+                });
+
+                logs(plr.playerName + ' won game in room ' + socket.roomId);
+            }
+
+            rm.turn = 3 - rm.turn;
+        } catch (e) {
+            logs(e);
+            socket.emit('MOVE', 'DENIED', -1, -1);
+            logs(socket.playerName + ' was denied to play');
+        }
     });
 
     // socket.emit(CHAT, msg);
     socket.on('CHAT', function (data) {
         socket.broadcast.emit('CHAT', socket.playerName, data);
-        console.log(data);
+        logs(socket.playerName +' say: ' +data);
     });
 });
+
+
+function logs(msg) {
+    console.log('[CARO] ' +msg);
+}
+
+function room(roomID) {
+    this.id = roomID;
+    this.board = new winstate.Board();
+    this.A = null;
+    this.B = null;
+    this.turn = 0;
+    this.listUser = [];
+}
+
+function Cell(x, y) {
+    this.x = x;
+    this.y = y;
+}
+

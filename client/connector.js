@@ -57,10 +57,17 @@ function Server(site) {
         else if(status == 'WATCH') log('JOIN '+ roomid +' '+ status);
     });
 
+<<<<<<< HEAD
     this.socket.on('MOVE', function(playername,x,y){
 		log(playername + " MOVE "+ x + " " + y);  
 		drawX(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2);
     });
+=======
+    this.socket.on('MOVE', function(name, x, y) {
+        log('Move: ' + name +' tick at (' + x + ',' + y +')');
+    } );
+
+>>>>>>> e6da2d2d690062c857950da25010105973dbf991
 
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');

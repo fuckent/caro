@@ -11,7 +11,6 @@ var board = null; // global variable board of game
 var player = 1; // it determines what player-turn
 var stt = null;
 var count = 10;
-var stateArray = new Array(NCELL)
 var server = null;
 var snd = null;
 
@@ -23,172 +22,7 @@ function Cell(row, column) {
     this.column = column;
 }
 
-function initStateArray() {
-    var i = 0;
-    for (i = 0; i < NCELL; i = i + 1) {
-        stateArray[i] = new Array(NCELL);
-        var j;
-        for (j = 0; j < NCELL; j++) {
-            stateArray[i][j] = 0;
-        }
-    }
-}
-
-function printState() {
-    var a = "";
-    var i;
-    for (i = 0; i < NCELL; i = i + 1) {
-        var j;
-        for (j = 0; j < NCELL; j = j + 1) {
-            a += stateArray[i][j];
-        }
-        a += "\n";
-    }
-    alert(a);
-}
-
-//  Check the cell is checked
-
-
-function CellisChecked(x, y) {
-    if (stateArray[x][y] == 1 || stateArray[x][y] == 2) return true;
-    return false;
-}
-
-function CellisCheckedBy(x, y, num) {
-    if (stateArray[x] == undefined) return false;
-    if (stateArray[x][y] == undefined) return false;
-    if (stateArray[x][y] == num) return true;
-    return false;
-}
-
-function checkHor(x) {
-    var count = 0;
-    var i;
-    for (i = 0; i < NCELL; i++) {
-        if (CellisCheckedBy(x, i, player)) {
-            count++;
-            if (count >= 5) return true;
-        } else {
-            count = 0;
-        }
-    }
-    return false;
-}
-
-function checkVert(y) {
-    var count = 0;
-    var i;
-    for (i = 0; i < NCELL; i++) {
-        if (CellisCheckedBy(i, y, player)) {
-            count++;
-            if (count >= 5) return true;
-        } else {
-            count = 0;
-        }
-    }
-    return false;
-}
-
-function checkSlash(x, y) {
-    //alert("Dang trong checkSlash");
-    var count = 0;
-    var deltax = x;
-    var deltay = NCELL - y;
-
-    if (deltax > deltay) {
-        //alert("deltax > deltay");
-        // lui ve y
-        y = NCELL;
-        x = x - deltay;
-        while (x < NCELL) {
-            //alert("checking1 "+x+" " +y);
-            if (CellisCheckedBy(x, y, player)) {
-                count++;
-                //alert(count);
-                if (count >= 5) return true;
-            } else {
-                count = 0;
-            }
-            x = x + 1;
-            y = y - 1;
-        }
-    } else {
-        //alert("deltax <= deltay");
-        x = 0;
-        y = y + deltax;
-        while (y >= 0) {
-            //alert("checking2 "+x+" " +y);
-            if (CellisCheckedBy(x, y, player)) {
-                count++;
-                //alert(count);
-                if (count >= 5) return true;
-            } else {
-                count = 0;
-            }
-            x = x + 1;
-            y = y - 1;
-        }
-    }
-    return false;
-}
-
-function checkBackSlash(x, y) {
-    var count = 0;
-
-    if (x > y) {
-        // lui ve y
-        x = x - y;
-        y = 0;
-        while (x < NCELL) {
-            //alert("checking1 "+x+" " +y);
-            if (CellisCheckedBy(x, y, player)) {
-                count++;
-                //alert(count);
-                if (count >= 5) return true;
-            } else {
-                count = 0;
-            }
-            x = x + 1;
-            y = y + 1;
-        }
-    } else {
-        y = y - x;
-        x = 0;
-        while (y >= 0) {
-            //alert("checking2 "+x+" " +y);
-            if (CellisCheckedBy(x, y, player)) {
-                count++;
-                //alert(count);
-                if (count >= 5) return true;
-            } else {
-                count = 0;
-            }
-            x = x - 1;
-            y = y - 1;
-        }
-    }
-    return false;
-}
-
-function checkWin(x, y) {
-    //check ngang
-    if (checkHor(x)) winner(x, y);
-    if (checkVert(y)) winner(x, y);
-    if (checkSlash(x, y)) winner(x, y);
-    if (checkBackSlash(x, y)) winner(x, y);
-    return false;
-}
-
-// update state array after check
-
-
 function updateStateArray(x, y) {
-    stateArray[x][y] = player;
-    //printState();
-    if (checkWin(x, y)) {
-        winner(cell1, cell2);
-    }
 }
 
 
@@ -226,7 +60,7 @@ function gameBoardOnClick(e) {
     count--;
     snd.play('tick');
     var pos = getCursorPosition(e); // pos is locations (row, column) player clicked
-    var state = CellisChecked(pos.column, pos.row);
+    var state = false ;//CellisChecked(pos.column, pos.row);
     if (!state) {
         player = 3 - player;
         log(playerName[3 - player] + ' tick at (' + pos.row + ', ' + pos.column + ')', 'event');
@@ -277,7 +111,6 @@ function runGame(){
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
     server = new Server('http://127.0.0.1:8000');
-    initStateArray();
     $('#login').submit(setNickName);
 }
 
