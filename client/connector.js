@@ -33,6 +33,16 @@ function Server(site) {
 		showReceiveMess(nick +': ' + msg, 'event');
         log(nick +': ' + msg, 'event');
     });
+    
+    this.socket.on('JOIN', function(nick, msg) {
+		showReceiveMess(nick +': ' + msg, 'event');
+    });
+    
+    this.socket.on('JOIN', function(nick, msg) {
+		
+    });
+    
+    
 
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');
@@ -49,4 +59,8 @@ function log(msg, type) {
 function showReceiveMess(msg, type) {
     $("#ChatBoxText").append('<p>' + msg + '</p>');
 }
+
+
+
+
 
