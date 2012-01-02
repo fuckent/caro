@@ -1,0 +1,648 @@
+   [36minfo  -[39m socket.io started
+   [90mdebug -[39m client authorized
+   [36minfo  -[39m handshake authorized 15922043881322340029
+   [90mdebug -[39m setting request GET /socket.io/1/websocket/15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m client authorized for 
+   [90mdebug -[39m websocket writing 1::
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m emitting heartbeat for client 15922043881322340029
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 15922043881322340029
+   [90mdebug -[39m set heartbeat interval for client 15922043881322340029
+   [36minfo  -[39m transport end
+   [90mdebug -[39m set close timeout for client 15922043881322340029
+   [90mdebug -[39m cleared close timeout for client 15922043881322340029
+   [90mdebug -[39m cleared heartbeat interval for client 15922043881322340029
+   [90mdebug -[39m discarding transport
+   [90mdebug -[39m client authorized
+   [36minfo  -[39m handshake authorized 1326120171605295172
+   [90mdebug -[39m setting request GET /socket.io/1/websocket/1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m client authorized for 
+   [90mdebug -[39m websocket writing 1::
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m websocket writing 5:::{"name":"JOIN","args":[1,"WAIT"]}
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m websocket writing 5:::{"name":"MOVE","args":[null,10,20]}
+undefined tick 10, 20
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m websocket writing 5:::{"name":"JOIN","args":[1,"PLAY"]}
+   [90mdebug -[39m websocket writing 5:::{"name":"JOIN","args":[1,"PLAY"]}
+   [90mdebug -[39m websocket writing 5:::{"name":"JOIN","args":[1,"WATCH"]}
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172
+   [90mdebug -[39m emitting heartbeat for client 1326120171605295172
+   [90mdebug -[39m websocket writing 2::
+   [90mdebug -[39m set heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m got heartbeat packet
+   [90mdebug -[39m cleared heartbeat timeout for client 1326120171605295172
+   [90mdebug -[39m set heartbeat interval for client 1326120171605295172

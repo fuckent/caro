@@ -54,7 +54,9 @@ function Server(site) {
         else if(status == 'WATCH') log('JOIN '+ roomid +' '+ status);
     });
 
-
+    this.socket.on('MOVE', function(name, x, y) {
+        log('Move: ' + name +' tick at (' + x + ',' + y +')');
+    } );
 
 
     this.socket.onclose = function () {
