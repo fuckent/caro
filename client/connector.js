@@ -10,6 +10,7 @@ function setNickName() {
     return false;
 }
 
+
 function Server(site) {
     //first, connect to server
     this.chat = function (msg) {
@@ -29,23 +30,25 @@ function Server(site) {
         this.socket.emit('JOIN',roomid);
     }
 
+	this.sendMoveCaro = function (x,y){
+        this.socket.emit('MOVE',x,y);
+    }
 
 
 
     try {
-    this.socket = new io.connect(site);
+		this.socket = new io.connect(site);
 
-    this.socket.onopen = function() {
-        log('Socket Status: '+socket.readyState+' (open)', 'event');
-    }
+		this.socket.onopen = function() {
+			log('Socket Status: '+socket.readyState+' (open)', 'event');
+		}
 
-    this.socket.on('CHAT', function(nick, msg) {
-        showReceiveMess(nick +': ' + msg, 'event');
-    $('#ChatBoxText').get(0).scrollTop = 10000000;
+		this.socket.on('CHAT', function(nick, msg) {
+			showReceiveMess(nick +': ' + msg, 'event');
+		$('#ChatBoxText').get(0).scrollTop = 10000000;
 
-        log(nick +': ' + msg, 'event');
-        $('#ChatBoxText').get(0).scrollTop = 10000000;
-
+			log(nick +': ' + msg, 'event');
+			$('#ChatBoxText').get(0).scrollTop = 10000000;
     });
 
     this.socket.on('JOIN', function(roomid,status) {
@@ -54,8 +57,10 @@ function Server(site) {
         else if(status == 'WATCH') log('JOIN '+ roomid +' '+ status);
     });
 
-
-
+    this.socket.on('MOVE', function(playername,x,y){
+		log(playername + " MOVE "+ x + " " + y);  
+		drawX(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2);
+    });
 
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');
@@ -72,8 +77,3 @@ function log(msg, type) {
 function showReceiveMess(msg, type) {
     $("#ChatBoxText").append('<p>' + msg + '</p>');
 }
-
-
-
-
-

@@ -26,8 +26,8 @@ io.sockets.on('connection', function (socket) {
     });
 
     // client call socket.emit('MOVE', x, y);
-    socket.on('MOVE', function (x, y) {
-        roomList[socket.roomId].forEach(function (sk) {
+    socket.on('MOVE', function (x, y){
+        roomList[socket.roomId].forEach(function (sk){
             sk.emit('MOVE', socket.playerName, x, y);
         });
 

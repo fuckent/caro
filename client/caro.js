@@ -243,15 +243,19 @@ function gameBoardOnClick(e) {
         //              (cell1, cell2) are the terminal cells of line which winner got to win the game
         //      (anyway, i'll code wined() function and some stuff to help you
         // HAVE FUN  :-)
-        if (player == 1) {
-            stt.textContent = "[RED TURN]";
-            drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-            updateStateArray(pos.column, pos.row);
-        } else {
+        stt.textContent = "[RED TURN]";
+        drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
+		server.sendMoveCaro(pos.column, pos.row);
+        log("Sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
+         
+        /*Another player turn 
+        else {
             stt.textContent = "[BLUE TURN]";
-            drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-            updateStateArray(pos.column, pos.row);
+            drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
+            server.sendMoveCaro(pos.column, pos.row);
+            log("Sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
         }
+        */
 
     }
 }
@@ -259,7 +263,7 @@ function gameBoardOnClick(e) {
 // this function called in the first time!
 
 
-function runGame() {
+function runGame(){
     snd = new sound();
     stt = document.getElementById("status");
     stt.textContent = "[READY]"; // set game status to READY
