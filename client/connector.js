@@ -1,19 +1,39 @@
 // this file connect to server and deal with many communicate problems
 
+function setNickName() {
+    var txt = $('#inputNick').val();
+    server.setNickName();
+    $('#inputNick').fadeOut(function() {
+        $('#login').append(txt);
+        });
+
+    return false;
+}
+
 function Server(site) {
     //first, connect to server
-    try {
-    this.socket = new WebSocket(site);
+    this.chat = function (msg) {
+        this.socket.emit('CHAT', msg);
+    }
 
-    socket.onopen = function() {
+    this.setNickName = function() {
+        var txt = $('#inputNick').val();
+        this.socket.emit('NICK', txt);
+        return false;
+    }
+
+    try {
+    this.socket = new io.connect(site);
+
+    this.socket.onopen = function() {
         log('Socket Status: '+socket.readyState+' (open)', 'event');
     }
 
-    socket.onmessage = function(msg) {
-        log('Recieved: ' + msg.data, 'message');
-    }
+    this.socket.on('CHAT', function(nick, msg) {
+        log(nick +': ' + msg, 'event');
+    });
 
-    socket.onclose = function () {
+    this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');
     }
     } catch (ex) {

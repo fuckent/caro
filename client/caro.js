@@ -13,6 +13,7 @@ var player = 1;             // it determines what player-turn
 var stt = null;
 var count = 10;
 var stateArray = new Array(NCELL)
+var server = null;
 
 // Cell class, we need to save the location of a cell on board
 function Cell(row, column) {
@@ -267,11 +268,14 @@ function runGame() {
         }
     );
 
+    $('#chatform').submit(soundbites);
+
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    var server = new Server("ws://google");
+    server = new Server('http://127.0.0.1:8000');
     initStateArray();
+    $('#login').submit(setNickName);
 }
 
 function drawBoard() {

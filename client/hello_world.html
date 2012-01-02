@@ -42,8 +42,11 @@
 
                 <div id="header">
                     <h1>Welcome to Caro world</h1>
-                </div>
+                <form id='login'>
+                    Nick: <input id='inputNick'>
 
+                </form>
+                </div>
                 <div id = "Board">
                     <div id= "Game">
                         <p>GAME BOARD</p>
@@ -56,16 +59,17 @@
                         <button>Reset</button>
 
                         <div id="ChatBox">
-                            <span class= "title">Chat box</span>
-                            <div id="ChatBoxText">
-								<p> Type here to chat with other people</p>
+                            <span class= "title" >Chat box</span>
+                            <div id="ChatBoxText" class="scoll">
+                                <p> Type here to chat with other people</p>
                             </div>
-                            <span class="title">
+                            <form id = "chatform">
+                            <span class="title" id = "input_box">
                                 <input id="input_chat">
-                                <button class="button" id = "sendMSG" onclick="soundbites( )">Send</button>
-                            </span>
+                                <button class="button" id = "sendMSG">Send</button>
+                            </span></form>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -73,7 +77,7 @@
                     <p id ="t">GAME LOGS</p>
                     <button class="button" id = "delete_button">Clear</button>
 
-                <div id = "GameLog">
+                <div id = "GameLog" class="scoll">
                     <div id = 'logs'>
                      <p id="examples" class="event">e.g. try 'hi', 'name', 'age', 'today'</p>
                      </div>
