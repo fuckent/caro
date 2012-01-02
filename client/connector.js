@@ -47,8 +47,9 @@ function Server(site) {
     });
 
     this.socket.on('JOIN', function(roomid,status) {
-       if(status == 'WAIT')log('JOIN '+ roomid +' '+ status);
+		if(status == 'WAIT')log('JOIN '+ roomid +' '+ status);
 		else if(status == 'PLAY')log('JOIN '+ roomid +' '+ status);
+		else if(status == 'WATCH')log('JOIN '+ roomid +' '+ status);
     });
 
 
