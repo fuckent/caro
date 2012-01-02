@@ -3,9 +3,9 @@
 function setNickName() {
     var txt = $('#inputNick').val();
     server.setNickName();
-    $('#inputNick').fadeOut(function() {
+    $('#inputNick').fadeOut(function () {
         $('#login').append(txt);
-        });
+    });
 
     return false;
 }
@@ -16,27 +16,28 @@ function Server(site) {
         this.socket.emit('CHAT', msg);
     }
 
-    this.setNickName = function() {
+    this.setNickName = function () {
         var txt = $('#inputNick').val();
+        this.nick = txt;
         this.socket.emit('NICK', txt);
         return false;
     }
 
     try {
-    this.socket = new io.connect(site);
+        this.socket = new io.connect(site);
 
-    this.socket.onopen = function() {
-        log('Socket Status: '+socket.readyState+' (open)', 'event');
-    }
+        this.socket.onopen = function () {
+            log('Socket Status: ' + socket.readyState + ' (open)', 'event');
+        }
 
-    this.socket.on('CHAT', function(nick, msg) {
-		showReceiveMess(nick +': ' + msg, 'event');
-        log(nick +': ' + msg, 'event');
-    });
+        this.socket.on('CHAT', function (nick, msg) {
+            showReceiveMess(nick + ': ' + msg, 'event');
+            log(nick + ': ' + msg, 'event');
+        });
 
-    this.socket.onclose = function () {
-        log('Socket Status: ' + socket.readyState + ' (close)', 'event');
-    }
+        this.socket.onclose = function () {
+            log('Socket Status: ' + socket.readyState + ' (close)', 'event');
+        }
     } catch (ex) {
         log('Error: ' + ex, 'error');
     }
@@ -49,4 +50,3 @@ function log(msg, type) {
 function showReceiveMess(msg, type) {
     $("#ChatBoxText").append('<p>' + msg + '</p>');
 }
-
