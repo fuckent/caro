@@ -170,7 +170,8 @@ function clearlight( ){
 		var context = board.getContext("2d");
 		context.fillStyle = 'FFFFFF';
 		context.fillRect (lastx-CELL_SIZE/2,lasty - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
-		draw[lastturn](lastx, lasty,COLOR[t]);
+		draw[lastturn](lastx, lasty,COLOR[lastturn]);
+		//draw[t](lastx, lasty, COLOR[t]);
 	}
 }
 
