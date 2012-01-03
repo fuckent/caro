@@ -30,25 +30,25 @@ function Server(site) {
         this.socket.emit('JOIN',roomid);
     }
 
-	this.sendMoveCaro = function (x,y){
+    this.sendMoveCaro = function (x,y){
         this.socket.emit('MOVE',x,y);
     }
 
 
 
     try {
-		this.socket = new io.connect(site);
+        this.socket = new io.connect(site);
 
-		this.socket.onopen = function() {
-			log('Socket Status: '+socket.readyState+' (open)', 'event');
-		}
+        this.socket.onopen = function() {
+            log('Socket Status: '+socket.readyState+' (open)', 'event');
+        }
 
-		this.socket.on('CHAT', function(nick, msg) {
-			showReceiveMess(nick +': ' + msg, 'event');
-		$('#ChatBoxText').get(0).scrollTop = 10000000;
+        this.socket.on('CHAT', function(nick, msg) {
+            showReceiveMess(nick +': ' + msg, 'event');
+        $('#ChatBoxText').get(0).scrollTop = 10000000;
 
-			log(nick +': ' + msg, 'event');
-			$('#ChatBoxText').get(0).scrollTop = 10000000;
+            log(nick +': ' + msg, 'event');
+            $('#ChatBoxText').get(0).scrollTop = 10000000;
     });
 
     this.socket.on('JOIN', function(roomid,status) {
@@ -57,17 +57,9 @@ function Server(site) {
         else if(status == 'WATCH') log('JOIN '+ roomid +' '+ status);
     });
 
-<<<<<<< HEAD
-    this.socket.on('MOVE', function(playername,x,y){
-		log(playername + " MOVE "+ x + " " + y);  
-		drawX(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2);
-    });
-=======
     this.socket.on('MOVE', function(name, x, y) {
         log('Move: ' + name +' tick at (' + x + ',' + y +')');
     } );
-
->>>>>>> e6da2d2d690062c857950da25010105973dbf991
 
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');

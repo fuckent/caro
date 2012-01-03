@@ -4,8 +4,8 @@
 // js source code for client-side caro game
 //var BOARD_SIZE = 300;
 // some game config
-var NCELL = 10; // number of cell on each dimensal
-var CELL_SIZE = 30; // size of a cell of game board
+var NCELL = 15; // number of cell on each dimensal
+var CELL_SIZE = 20; // size of a cell of game board
 var XO_RATE = 2 / 3; // relative size of X/O with cell
 var board = null; // global variable board of game
 var player = 1; // it determines what player-turn
@@ -77,12 +77,11 @@ function gameBoardOnClick(e) {
         //              (cell1, cell2) are the terminal cells of line which winner got to win the game
         //      (anyway, i'll code wined() function and some stuff to help you
         // HAVE FUN  :-)
-        stt.textContent = "[RED TURN]";
         drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-		server.sendMoveCaro(pos.column, pos.row);
+        server.sendMoveCaro(pos.column, pos.row);
         log("Sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
-         
-        /*Another player turn 
+
+        /*Another player turn
         else {
             stt.textContent = "[BLUE TURN]";
             drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
@@ -100,7 +99,6 @@ function gameBoardOnClick(e) {
 function runGame(){
     snd = new sound();
     stt = document.getElementById("status");
-    stt.textContent = "[READY]"; // set game status to READY
     $('#delete_button').click(function () {
         $('#logs')[0].textContent = null;
     });
