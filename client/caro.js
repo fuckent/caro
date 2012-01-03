@@ -4,8 +4,8 @@
 // js source code for client-side caro game
 //var BOARD_SIZE = 300;
 // some game config
-var NCELL = 10; // number of cell on each dimensal
-var CELL_SIZE = 30; // size of a cell of game board
+var NCELL = 15; // number of cell on each dimensal
+var CELL_SIZE = 25; // size of a cell of game board
 var XO_RATE = 2 / 3; // relative size of X/O with cell
 var board = null; // global variable board of game
 var player = null; // it determines what player-turn
@@ -14,6 +14,7 @@ var count = 10;
 var server = null;
 var snd = null;
 var turn = 1;
+var roomID = 2;
 
 var lastx = null;
 var lasty = null;
@@ -101,6 +102,13 @@ function runGame(){
     snd = new sound();
     stt = document.getElementById("status");
     stt.textContent = "[READY]"; // set game status to READY
+
+    $('#F5Button').click(function () {
+        $('#GameBoard').fadeOut();
+        $('#GameBoard').fadeIn();
+        server.socket.emit('STT', roomID);
+    });
+
     $('#delete_button').click(function () {
         $('#logs')[0].textContent = null;
     });
@@ -110,11 +118,11 @@ function runGame(){
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server("http://127.0.0.1:8000");
+    server = new Server('http://caro.nodester.com');
     $('#login').submit(setNickName);
 
     // JOIN ROOM
-    server.joinRoom(1);
+    server.joinRoom(roomID);
 }
 
 
