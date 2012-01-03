@@ -120,6 +120,8 @@ function Server(site) {
 
 function log(msg, type) {
     $("#logs").append('<p class = "' + type + '">' + msg + '</p>');
+    $('#GameLog').get(0).scrollTop = 10000000;
+
 }
 
 function showReceiveMess(msg, type) {
