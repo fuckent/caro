@@ -14,6 +14,11 @@ var count = 10;
 var server = null;
 var snd = null;
 var turn = 1;
+
+var lastx = null;
+var lasty = null;
+var lastturn = null;
+
 // Cell class, we need to save the location of a cell on board
 
 
@@ -105,7 +110,7 @@ function runGame(){
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server('http://127.0.0.1:8000');
+    server = new Server("http://127.0.0.1:8000");
     $('#login').submit(setNickName);
 
     // JOIN ROOM
@@ -153,6 +158,22 @@ function drawBoard() {
         b_context.stroke();
     }
 }
+
+function highlight(x, y){
+    var context = board.getContext("2d");
+    context.fillStyle = 'FFE1FF';
+	context.fillRect (x-CELL_SIZE/2,y - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
+}
+function clearlight( ){
+	if(lastx != null && lasty != null){
+		log("erase highlight cell ["+lastx+"]["+lasty+"]", 'annound');
+		var context = board.getContext("2d");
+		context.fillStyle = 'FFFFFF';
+		context.fillRect (lastx-CELL_SIZE/2,lasty - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
+		draw[lastturn](lastx, lasty,COLOR[t]);
+	}
+}
+
 
 function drawX(x, y, color) {
     var context = board.getContext("2d");
