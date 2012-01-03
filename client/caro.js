@@ -173,16 +173,7 @@ function highlight(x, y){
     context.fillRect (lastx-CELL_SIZE/2+1,lasty - CELL_SIZE/2+1,CELL_SIZE-1,CELL_SIZE-1);
 }
 function clearlight( ){
-<<<<<<< HEAD
-	if(lastx != null && lasty != null){
-		log("erase highlight cell ["+lastx+"]["+lasty+"]", 'annound');
-		var context = board.getContext("2d");
-		context.fillStyle = 'FFFFFF';
-		context.fillRect (lastx-CELL_SIZE/2,lasty - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
-		draw[lastturn](lastx, lasty,COLOR[lastturn]);
-		//draw[t](lastx, lasty, COLOR[t]);
-	}
-=======
+
     if(lastx != null && lasty != null){
         log("erase highlight cell ["+lastx+"]["+lasty+"]", 'annound');
         var context = board.getContext("2d");
@@ -190,7 +181,6 @@ function clearlight( ){
         context.fillRect (lastx-CELL_SIZE/2+1,lasty - CELL_SIZE/2+1,CELL_SIZE-1,CELL_SIZE-1);
         draw[lastturn](lastx, lasty,COLOR[lastturn]);
     }
->>>>>>> b4baffe30a1e2eb0ad2e22113b3b50432c0ddce9
 }
 
 
