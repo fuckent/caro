@@ -59,7 +59,7 @@ io.sockets.on('connection', function (socket) {
             });
 
 
-            console.log(socket.playerName + ' tick ' + x + ', ' + y);
+            logs(socket.playerName + ' tick ' + x + ', ' + y);
 
             if (rm.board.checkWin(x, y)) {
 
@@ -82,6 +82,13 @@ io.sockets.on('connection', function (socket) {
     socket.on('CHAT', function (data) {
         socket.broadcast.emit('CHAT', socket.playerName, data);
         logs(socket.playerName +' say: ' +data);
+    });
+
+    socket.on('STT', function(roomID) {
+        var rm = roomList[roomID];
+        socket.emit('STT', rm.board.stateArray, rm.turn);
+        logs('Sent room ' + roomID + ' info to player ' + socket.playerName);
+
     });
 });
 

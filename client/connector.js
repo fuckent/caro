@@ -1,10 +1,17 @@
 // this file connect to server and deal with many communicate problems
 
+var myturn = 0;
+var COLOR = ['', '#f00', '#00f'];
+var draw = [];
+draw[1] = drawX;
+draw[2] = drawO;
+
+
 function setNickName() {
     var txt = $('#inputNick').val();
     playerName[0] = txt;
     server.setNickName();
-    
+
     $('#inputNick').fadeOut(function() {
         $('#login').append(txt);
         });
@@ -55,52 +62,53 @@ function Server(site) {
 
     this.socket.on('JOIN', function(roomid,status) {
         if(status == 'WAIT'){
-			if(player == null){
-				player = 1;
-				turn = 1;
-			}			
-			log('JOIN '+ roomid +' '+ status);
-		}
+            myturn = 1;
+            turn = 1;
+            log('JOIN '+ roomid +' '+ status);
+        }
         else if(status == 'PLAY'){
-			if(player == null){
-				player = 2;
-				turn = 2;
-				stt.textContent = "[RIVAL TURN]";
-			}	
-			else if(player == 1){
-				stt.textContent = "[YOUR TURN]";
-			}	
-			log('JOIN '+ roomid +' '+ status);
-		}
+            if (myturn != 1) myturn = 2;
+            turn = 1;
+            stt.textContent = "[RIVAL TURN]";
+            stt.textContent = "[YOUR TURN]";
+            log('JOIN '+ roomid +' '+ status);
+        }
         else if(status == 'WATCH'){
-			if(player == null){
-				player = 3;
-				stt.textContent = "[WATCHING]";
-			}		
-			log('JOIN '+ roomid +' '+ status);
-		}
+            turn = 1;
+            myturn = 0;
+            stt.textContent = "[WATCHING]";
+            server.socket.emit('STT', roomid);
+            log('JOIN '+ roomid +' '+ status);
+        }
     });
 
     this.socket.on('MOVE', function(name, x, y) {
-		turn = 3 - turn;
-		if(stt.textContent == "[YOUR TURN]"){
-			stt.textContent = "[RIVAL TURN]";
-		}
-		else if(stt.textContent == "[RIVAL TURN]"){
-			stt.textContent = "[YOUR TURN]";
-		}
-        // update board if anyone else check
-        if(playerName[0] != name){
-			if(player == 1){ // rival player = 2, check X
-				drawX(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2);
-			}
-			else if(player == 2){
-				drawO(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2);
-			}
-		}
-        log('Move: ' + name +' tick at (' + x + ',' + y +')');
-        
+        if (x == -1) log('Move denied', 'error');
+        else {
+            if(stt.textContent == "[YOUR TURN]"){
+                stt.textContent = "[RIVAL TURN]";
+            }
+            else if(stt.textContent == "[RIVAL TURN]"){
+                stt.textContent = "[YOUR TURN]";
+            }
+            // update board if anyone else check
+                draw[turn](x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2, COLOR[turn]);
+
+            turn = 3 - turn;
+            log('Move: ' + name +' tick at (' + x + ',' + y +')', 'event');
+        }
+
     } );
+
+    this.socket.on('WIN', function(name) {
+        turn = -1;
+        log('<b>Congratulation !!!  ' + name + ' won the game</b>',  'annound');
+    });
+
+    this.socket.on('STT', function(state, turn1) {
+        turn = turn1;
+        reDrawBoard(state);
+    });
 
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');

@@ -60,13 +60,17 @@ function gameBoardOnClick(e) {
     count--;
 
     var pos = getCursorPosition(e); // pos is locations (row, column) player clicked
+    if (turn == myturn ) {
+        server.sendMoveCaro(pos.column, pos.row);
+        log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
+    } else log('Move denied', 'error');
 
     // player 1 , check O
+    /*
         if(player == 1){
             if(turn  == 1){
                 snd.play('tick');
                 drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-                server.sendMoveCaro(pos.column, pos.row);
                 log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
                 stt.textContent = "[RIVAL TURN]";
             }
@@ -82,6 +86,7 @@ function gameBoardOnClick(e) {
                 stt.textContent = "[RIVAL TURN]";
             }
         }
+        */
 }
 
 // this function called in the first time!
@@ -100,11 +105,29 @@ function runGame(){
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server('http://caro.nodester.com');
+    server = new Server('http://127.0.0.1:8000');
     $('#login').submit(setNickName);
 
     // JOIN ROOM
     server.joinRoom(1);
+}
+
+
+function reDrawBoard(state) {
+
+    drawBoard();
+    for (var i = 0; i < NCELL; i++) {
+        for (var j = 0; j < NCELL; j++) {
+            try {
+                if (state[i] [j] != undefined) {
+                    var t = state[i] [j];
+                    draw[t](i * CELL_SIZE + CELL_SIZE / 2, j * CELL_SIZE + CELL_SIZE / 2, COLOR[t]);
+                }
+            } catch (e) {}
+
+        }
+    }
+
 }
 
 function drawBoard() {
@@ -112,6 +135,7 @@ function drawBoard() {
     board.height = NCELL * CELL_SIZE + 2;
     board.width = NCELL * CELL_SIZE + 2;
     var b_context = board.getContext("2d");
+    b_context.clearRect(0,0, board.height, board.height);
     b_context.lineWidth = 1;
     b_context.lineCap = 'round';
 
@@ -130,10 +154,10 @@ function drawBoard() {
     }
 }
 
-function drawX(x, y) {
+function drawX(x, y, color) {
     var context = board.getContext("2d");
     var delta = CELL_SIZE / 2.5 * XO_RATE;
-    context.strokeStyle = '#00f';
+    context.strokeStyle = color;
 
     context.lineWidth = CELL_SIZE / 10;
     context.lineCap = 'round';
@@ -157,7 +181,7 @@ function drawO(x, y, color) {
     var context = board.getContext("2d");
     var radius = CELL_SIZE * XO_RATE / 2;
     context.lineWidth = CELL_SIZE / 10;
-    context.strokeStyle = '#f00';
+    context.strokeStyle = color;
 
     context.beginPath();
     context.arc(x, y, radius, 0, Math.PI * 2, true); // Outer circle
