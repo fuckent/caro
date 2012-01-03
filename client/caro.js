@@ -4,16 +4,16 @@
 // js source code for client-side caro game
 //var BOARD_SIZE = 300;
 // some game config
-var NCELL = 15; // number of cell on each dimensal
-var CELL_SIZE = 20; // size of a cell of game board
+var NCELL = 10; // number of cell on each dimensal
+var CELL_SIZE = 30; // size of a cell of game board
 var XO_RATE = 2 / 3; // relative size of X/O with cell
 var board = null; // global variable board of game
-var player = 1; // it determines what player-turn
+var player = null; // it determines what player-turn
 var stt = null;
 var count = 10;
 var server = null;
 var snd = null;
-
+var turn = 1;
 // Cell class, we need to save the location of a cell on board
 
 
@@ -58,39 +58,30 @@ var playerName = ['', 'RED', 'BLUE'];
 function gameBoardOnClick(e) {
     //var draw = [drawX, drawO];
     count--;
-    snd.play('tick');
+   
     var pos = getCursorPosition(e); // pos is locations (row, column) player clicked
-    var state = false ;//CellisChecked(pos.column, pos.row);
-    if (!state) {
-        player = 3 - player;
-        log(playerName[3 - player] + ' tick at (' + pos.row + ', ' + pos.column + ')', 'event');
-
-
-        // the below line only draw X/O on screen, we need to do more
-        // now, focus what i type below
-        // fist, we need check that `pos' (cell) is clicked before (a player was chooses it)
-        // so, if that cell is free,
-        //      + save it location on your state of board variable !!! (so important)
-        //      + draw it on screen (the line below)
-        //      + check whether it have a player win a game,
-        //          if have, call winner(cell1, cell2) function to do more!
-        //              (cell1, cell2) are the terminal cells of line which winner got to win the game
-        //      (anyway, i'll code wined() function and some stuff to help you
-        // HAVE FUN  :-)
-        drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-        server.sendMoveCaro(pos.column, pos.row);
-        log("Sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
-
-        /*Another player turn
-        else {
-            stt.textContent = "[BLUE TURN]";
-            drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-            server.sendMoveCaro(pos.column, pos.row);
-            log("Sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
-        }
-        */
-
-    }
+	
+	// player 1 , check O
+		if(player == 1){ 
+			if(turn  == 1){
+				snd.play('tick');
+				drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
+				server.sendMoveCaro(pos.column, pos.row);
+				log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
+				stt.textContent = "[RIVAL TURN]";
+			}
+		}
+		// player 2, check X
+		else if (player == 2){ 
+			if(turn == 1){
+				stt.textContent = "[YOUR TURN]";
+				snd.play('tick');
+				drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
+				server.sendMoveCaro(pos.column, pos.row);
+				log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
+				stt.textContent = "[RIVAL TURN]";
+			}
+		}
 }
 
 // this function called in the first time!
@@ -99,6 +90,7 @@ function gameBoardOnClick(e) {
 function runGame(){
     snd = new sound();
     stt = document.getElementById("status");
+    stt.textContent = "[READY]"; // set game status to READY
     $('#delete_button').click(function () {
         $('#logs')[0].textContent = null;
     });
@@ -110,6 +102,9 @@ function runGame(){
     drawBoard(); // draw board of game for this first time
     server = new Server('http://127.0.0.1:8000');
     $('#login').submit(setNickName);
+    
+    // JOIN ROOM
+    server.joinRoom(1);
 }
 
 function drawBoard() {
