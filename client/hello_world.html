@@ -5,18 +5,11 @@
         <title>
             Hello world
         </title>
-
-        <!-- a library help us easy with javascipt on browser -->
-        <script src="jquery.js"></script>
-        <link type="text/css" href="css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
-        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
-
-
         <link rel="stylesheet" href="style.css" />
         <script src="sound.js"></script>
         <script src="socket.io.js"></script>
-
+        <!-- a library help us easy with javascipt on browser -->
+        <script src="jquery.js"></script>
 
         <!-- this js file have funcions to check
              whether client browser support HTML5 functions-->
@@ -34,13 +27,7 @@
                 alert('This browser doesn\'t support canvas');
                 // TODO:
             }
-
-
         </script>
-
-
-
-
     </head>
 
     <!-- call runGame javascript function after this page was loaded -->
@@ -60,21 +47,23 @@
                 </form>
                 </div>
                 <div id = "Board">
-                        <p class="title">GAME BOARD</p>
                     <div id= "Game">
-                        <canvas id="GameBoard" height="302" width="302"></canvas>
+                        <p>GAME BOARD</p>
+                        <canvas id = "GameBoard" ></canvas>
                     </div>
 
-                </div>
-
                     <div id="Panel">
-                        <div id="ChatBox"  >
+                        <p>GAME STATUS</p>
+                        <p id="status">[LOADING...]</p>
+                        <button>Reset</button>
+
+                        <div id="ChatBox">
                             <span class= "title" >Chat box</span>
                             <div id="ChatBoxText" class="scoll">
                                 <p> Type here to chat with other people</p>
                             </div>
                             <form id = "chatform">
-                            <span class="title subtitle">
+                            <span class="title" id = "input_box">
                                 <input id="input_chat">
                                 <button class="button" id = "sendMSG">Send</button>
                             </span></form>
@@ -82,21 +71,18 @@
                     </div>
 
 
-                <div id = "Log" class="ui-widget-content ui-draggable">
-                    <span class = 'title'>
-                        <p id ='t'>GAME LOGS</p>
-                    </span>
 
-                    <div id = "GameLog" class="scoll">
-                        <div id = 'logs'>
-                             <p id="examples" class="event">e.g. try 'hi', 'name', 'age', 'today'</p>
-                         </div>
-                    </div>
+                </div>
 
-                    <span class = 'title subtitle'>
-                        <button class="button" id = "delete_button">Clear</button>
-                    </span>
+                <div id = "Log">
+                    <p id ="t">GAME LOGS</p>
+                    <button class="button" id = "delete_button">Clear</button>
 
+                <div id = "GameLog" class="scoll">
+                    <div id = 'logs'>
+                     <p id="examples" class="event">e.g. try 'hi', 'name', 'age', 'today'</p>
+                     </div>
+                </div>
                 </div> <!-- log -->
 
 

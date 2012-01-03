@@ -58,30 +58,30 @@ var playerName = ['', 'RED', 'BLUE'];
 function gameBoardOnClick(e) {
     //var draw = [drawX, drawO];
     count--;
-   
+
     var pos = getCursorPosition(e); // pos is locations (row, column) player clicked
-	
-	// player 1 , check O
-		if(player == 1){ 
-			if(turn  == 1){
-				snd.play('tick');
-				drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-				server.sendMoveCaro(pos.column, pos.row);
-				log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
-				stt.textContent = "[RIVAL TURN]";
-			}
-		}
-		// player 2, check X
-		else if (player == 2){ 
-			if(turn == 1){
-				stt.textContent = "[YOUR TURN]";
-				snd.play('tick');
-				drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
-				server.sendMoveCaro(pos.column, pos.row);
-				log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
-				stt.textContent = "[RIVAL TURN]";
-			}
-		}
+
+    // player 1 , check O
+        if(player == 1){
+            if(turn  == 1){
+                snd.play('tick');
+                drawO(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
+                server.sendMoveCaro(pos.column, pos.row);
+                log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
+                stt.textContent = "[RIVAL TURN]";
+            }
+        }
+        // player 2, check X
+        else if (player == 2){
+            if(turn == 1){
+                stt.textContent = "[YOUR TURN]";
+                snd.play('tick');
+                drawX(pos.column * CELL_SIZE + CELL_SIZE / 2, pos.row * CELL_SIZE + CELL_SIZE / 2);
+                server.sendMoveCaro(pos.column, pos.row);
+                log(playerName[0] + " sending MOVE ["+ pos.column+"] ["+ pos.row+"]");
+                stt.textContent = "[RIVAL TURN]";
+            }
+        }
 }
 
 // this function called in the first time!
@@ -102,7 +102,7 @@ function runGame(){
     drawBoard(); // draw board of game for this first time
     server = new Server('http://127.0.0.1:8000');
     $('#login').submit(setNickName);
-    
+
     // JOIN ROOM
     server.joinRoom(1);
 }

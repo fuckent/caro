@@ -1,5 +1,5 @@
 var winstate = exports;
-NCELL = 15; // number of cell on each dimensal
+NCELL = 10; // number of cell on each dimensal
 
 var Board = winstate.Board = function() {
 
