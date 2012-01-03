@@ -100,7 +100,7 @@ function runGame(){
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server('http://127.0.0.1:8000');
+    server = new Server('http://caro.nodester.com');
     $('#login').submit(setNickName);
 
     // JOIN ROOM
