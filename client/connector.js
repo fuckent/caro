@@ -92,8 +92,12 @@ function Server(site) {
                 stt.textContent = "[YOUR TURN]";
             }
             // update board if anyone else check
+				clearlight();
+				lastx = x * CELL_SIZE + CELL_SIZE / 2;
+				lasty = y * CELL_SIZE + CELL_SIZE / 2;
+				lastturn = turn;
+				highlight(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2, COLOR[turn]);
                 draw[turn](x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2, COLOR[turn]);
-
             turn = 3 - turn;
             log('Move: ' + name +' tick at (' + x + ',' + y +')', 'event');
         }

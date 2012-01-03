@@ -15,6 +15,11 @@ var server = null;
 var snd = null;
 var turn = 1;
 var roomID = 2;
+
+var lastx = null;
+var lasty = null;
+var lastturn = null;
+
 // Cell class, we need to save the location of a cell on board
 
 
@@ -162,6 +167,22 @@ function drawBoard() {
     }
 }
 
+function highlight(x, y){
+    var context = board.getContext("2d");
+    context.fillStyle = 'FFE1FF';
+	context.fillRect (x-CELL_SIZE/2,y - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
+}
+function clearlight( ){
+	if(lastx != null && lasty != null){
+		log("erase highlight cell ["+lastx+"]["+lasty+"]", 'annound');
+		var context = board.getContext("2d");
+		context.fillStyle = 'FFFFFF';
+		context.fillRect (lastx-CELL_SIZE/2,lasty - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
+		draw[lastturn](lastx, lasty,COLOR[t]);
+	}
+}
+
+
 function drawX(x, y, color) {
     var context = board.getContext("2d");
     var delta = CELL_SIZE / 2.5 * XO_RATE;
@@ -217,7 +238,4 @@ function winner(pos1, pos2) {
     context.lineTo(x2, y2);
     context.stroke(); // Rect(x-delta, y - delta, 2*delta, 2*delta);
     //board.addEventListener("click", , false);
-}
-
-function fillCell(x, y, color) {
 }
