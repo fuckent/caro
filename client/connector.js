@@ -10,6 +10,7 @@ draw[2] = drawO;
 function setNickName() {
     var txt = $('#inputNick').val();
     playerName[0] = txt;
+    server.nick = txt;
     server.setNickName();
 
     $('#inputNick').fadeOut(function() {
@@ -22,6 +23,8 @@ function setNickName() {
 
 function Server(site) {
     //first, connect to server
+    this.site = site;
+
     this.chat = function (msg) {
         this.socket.emit('CHAT', msg);
     }
@@ -53,7 +56,7 @@ function Server(site) {
         }
 
         this.socket.on('CHAT', function(nick, msg) {
-            showReceiveMess(nick +': ' + msg, 'event');
+            showReceiveMess(nick,msg);
         $('#ChatBoxText').get(0).scrollTop = 10000000;
 
             log(nick +': ' + msg, 'event');
@@ -92,11 +95,11 @@ function Server(site) {
                 stt.textContent = "[YOUR TURN]";
             }
             // update board if anyone else check
-				clearlight();
-				lastx = x * CELL_SIZE + CELL_SIZE / 2;
-				lasty = y * CELL_SIZE + CELL_SIZE / 2;
-				lastturn = turn;
-				highlight(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2, COLOR[turn]);
+                clearlight();
+                lastx = x * CELL_SIZE + CELL_SIZE / 2;
+                lasty = y * CELL_SIZE + CELL_SIZE / 2;
+                lastturn = turn;
+                highlight(x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2, COLOR[turn]);
                 draw[turn](x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE + CELL_SIZE / 2, COLOR[turn]);
             turn = 3 - turn;
             log('Move: ' + name +' tick at (' + x + ',' + y +')', 'event');
@@ -114,6 +117,37 @@ function Server(site) {
         reDrawBoard(state);
     });
 
+    this.socket.on('connect', function() {
+
+        myturn = null;
+        turn = null;
+        lastx = null;
+        lasty = null;
+        lastturn = null;
+        server.setNickName();
+        server.joinRoom(roomID);
+        $('#GameBoard').fadeOut();
+        $('#GameBoard').fadeIn();
+        server.socket.emit('STT', roomID);
+
+        log('Connected to server ' + site,'event');
+
+    });
+
+    this.socket.on('reconnect', function() {
+
+        log('Reconnected to the server', 'event');
+
+    });
+
+    this.socket.on('reconnecting', function() {
+        log('Attempting to re-connect to the server', 'event');
+    });
+
+    this.socket.on('error', function (e) {
+        log('Unknown error '+ e+' on socket', 'error');
+    });
+
     this.socket.onclose = function () {
         log('Socket Status: ' + socket.readyState + ' (close)', 'event');
     }
@@ -128,6 +162,8 @@ function log(msg, type) {
 
 }
 
-function showReceiveMess(msg, type) {
-    $("#ChatBoxText").append('<p>' + msg + '</p>');
+function showReceiveMess(from, msg, type) {
+    $("#ChatBoxText").append('<p class= "' + type + '"> <b> ' +from + '</b>' + msg + '</p>');
+    $('#ChatBoxText').get(0).scrollTop = 10000000;
+
 }

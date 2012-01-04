@@ -1,5 +1,78 @@
 var io = require('socket.io').listen(8000);
 io.set('log level', 1);                    // reduce logging
+io.set('close timeout', 3);
+io.set('heartbeat timeout', 3);
+io.set('heartbeat interval', 5);
+io.set('polling duration', 10);
+
+function UserData(id, name, password, email) {
+    this.id = id;
+    this.name = name;
+    this.password = password;
+    this.email = email;
+}
+
+
+function dataBase() {
+    this.nUser = 0;
+    this.listUser = [];
+
+    this.addUser = function(name, pass, email) {
+        this.listUser.push(new UserData(this.nUser++, name, pass, email));
+    };
+
+    this.deleteUser = function(id) {
+        delete this.listUser[id];
+    };
+
+    this.getUserID = function(name) {
+        var lu = this.listUser.filter( function(u) {
+            return u.name == name;
+        }
+        );
+
+        if (lu.length == 0) return null;
+        return lu[0].id;
+    };
+}
+
+function User() {
+    this.OLUser =[];
+    this.db = new dataBase();
+
+    this.register = function(name, pass, email) {
+        this.db.addUser(name, pass, email);
+    };
+
+    this.getUserID = function(name) {
+        return this.db.getUserID(name);
+    }
+
+    this.login = function(name, pass) {
+        var id = this.getUserID(name);
+        this.OLUser[id] = true;
+    };
+
+    this.logout = function(id, token) {
+        delete this.OLUser[id];
+    };
+
+    this.isOnline = function(id) {
+    };
+
+    this.getRoom = function(id) {
+
+    };
+
+    this.getRole = function(id) {
+    };
+
+    this.getName =function(id) {
+    };
+}
+
+
+
 
 
 var winstate = require('./winstate');

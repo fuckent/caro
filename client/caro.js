@@ -107,6 +107,7 @@ function runGame(){
         $('#GameBoard').fadeOut();
         $('#GameBoard').fadeIn();
         server.socket.emit('STT', roomID);
+        log('Refreshed the board', 'event');
     });
 
     $('#delete_button').click(function () {
@@ -122,7 +123,6 @@ function runGame(){
     $('#login').submit(setNickName);
 
     // JOIN ROOM
-    server.joinRoom(roomID);
 }
 
 
