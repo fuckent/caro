@@ -88,11 +88,10 @@ function Server(site) {
     this.socket.on('MOVE', function(name, x, y) {
         if (x == -1) log('Move denied', 'error');
         else {
-            if(stt.textContent == "[YOUR TURN]"){
-                stt.textContent = "[RIVAL TURN]";
-            }
-            else if(stt.textContent == "[RIVAL TURN]"){
-                stt.textContent = "[YOUR TURN]";
+            if (myturn > 0) {
+                if (turn == 3 - myturn)
+                    stt.textContent = ">>YOUR TURN<<";
+             else stt.textContent = ">>WAITING<<";
             }
             // update board if anyone else check
                 clearlight();
@@ -165,5 +164,6 @@ function log(msg, type) {
 function showReceiveMess(from, msg, type) {
     $("#ChatBoxText").append('<p class= "' + type + '"> <b> ' +from + '</b>' + msg + '</p>');
     $('#ChatBoxText').get(0).scrollTop = 10000000;
+    if (!isFocus) note.notify(from, msg);
 
 }

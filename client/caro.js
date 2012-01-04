@@ -19,6 +19,8 @@ var roomID = 2;
 var lastx = null;
 var lasty = null;
 var lastturn = null;
+var note = new Notify();
+var isFocus = true;
 
 // Cell class, we need to save the location of a cell on board
 
@@ -119,7 +121,7 @@ function runGame(){
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server('http://caro.nodester.com');
+    server = new Server('http://127.0.0.1:8000');
     $('#login').submit(setNickName);
 
     // JOIN ROOM
@@ -239,4 +241,20 @@ function winner(pos1, pos2) {
     context.lineTo(x2, y2);
     context.stroke(); // Rect(x-delta, y - delta, 2*delta, 2*delta);
     //board.addEventListener("click", , false);
+}
+
+
+function onBlur() {
+    isFocus = false;
+};
+function onFocus(){
+    isFocus = true;
+};
+
+if (/*@cc_on!@*/false) { // check for Internet Explorer
+    document.onfocusin = onFocus;
+    document.onfocusout = onBlur;
+} else {
+    window.onfocus = onFocus;
+    window.onblur = onBlur;
 }
