@@ -27,7 +27,7 @@ font-size: 18px;
 
 #container{
     position:absolute;
-    top: 30px;
+    top: 26px;
     left: 0px;
     right: 0px;
     bottom:30px;
@@ -359,7 +359,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
     overflow-y: auto;
 
     position:absolute;
-    top:96px;
+    top:50px;
     bottom: 15px;
     right:0px;
     left:0px;

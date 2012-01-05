@@ -45,15 +45,14 @@ function updateStateArray(x, y) {
 function getCursorPosition(e) {
     var x;
     var y;
-    if (e.pageX != undefined && e.pageY != undefined) {
-        x = e.pageX;
-        y = e.pageY;
+    if (e.offsetX != undefined && e.offsetY != undefined) {
+    x = e.offsetX;
+    y = e.offsetY;
     } else {
-        x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    }
-    x -= board.offsetLeft;
-    y -= (board.offsetTop - $('#main')[0].scrollTop + $('#main')[0].offsetTop  + 30 );
+                x = e.clientX;
+        y = e.clientY;
+    x -=  60;
+    y -= (120 + $('#main').scrollTop());    }
     var cell = new Cell(Math.floor(y / CELL_SIZE), Math.floor(x / CELL_SIZE));
     return cell;
 }
