@@ -6,11 +6,12 @@
             Hello world
         </title>
         <link rel="stylesheet" href="style.css" />
+        <script src="jquery.js"></script>
         <script src="sound.js"></script>
         <script src="notify.js"></script>
+        <script src="console.js"></script>
         <script src="socket.io.js"></script>
         <!-- a library help us easy with javascipt on browser -->
-        <script src="jquery.js"></script>
 
         <!-- this js file have funcions to check
              whether client browser support HTML5 functions-->
@@ -33,13 +34,11 @@
 
     <!-- call runGame javascript function after this page was loaded -->
     <body onload="runGame()">
-                <div id="HeaderBar">
-                    <p>Login | Logout | Help | About</p>
-                </div>
+        <div id="HeaderBar">
+            <p>Login | Logout | Help | About</p>
+        </div>
 
-        <div id = "wrapper">
-            <div id = "container">
-
+        <div id = "container">
                 <div id="header">
                     <h1>Welcome to Caro world</h1>
                 <form id='login'>
@@ -47,6 +46,7 @@
 
                 </form>
                 </div>
+            <div id="main">
                 <div id = "Board">
                     <div id= "Game">
                         <p>GAME BOARD</p>
@@ -86,14 +86,17 @@
                 </div>
                 </div> <!-- log -->
 
+            </div>
 
-                <div id = 'footer'>
-                    <center>
-                    <p>Authors : Thong T. Nguyen, Thanh T. Cao</p></center>
-                </div>
-            </div> <!-- #container -->
+
+        </div> <!-- #container -->
+
+        <div id="FooterBar">
+            <span id = 'Console'>
+                <span id = 'cs' class='signed'> > </span><span style='display:inline;'><span id = 'csA' class='typed'>Here is a console. </span><span id = 'csB' class = 'Cursor'>T</span><span id = 'csC' class = 'Guest'>ype 'help' for more commands</span>
+                </span>
+            </span>
         </div>
-
 
     </body>
 </html>

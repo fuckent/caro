@@ -14,14 +14,15 @@ var count = 10;
 var server = null;
 var snd = null;
 var turn = 1;
+<<<<<<< HEAD
 var roomID = 2;
+=======
 
 var lastx = null;
 var lasty = null;
 var lastturn = null;
-var note = new Notify();
-var isFocus = true;
 
+>>>>>>> ccdc9694cb23dc6e5d7bfef57f51e88bfa5f3d3d
 // Cell class, we need to save the location of a cell on board
 
 
@@ -53,7 +54,7 @@ function getCursorPosition(e) {
         y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
     }
     x -= board.offsetLeft;
-    y -= (board.offsetTop - $('#main')[0].scrollTop + $('#main')[0].offsetTop  + 30 );
+    y -= board.offsetTop;
     var cell = new Cell(Math.floor(y / CELL_SIZE), Math.floor(x / CELL_SIZE));
     return cell;
 }
@@ -101,33 +102,14 @@ function gameBoardOnClick(e) {
 
 
 function runGame(){
-    CELL_SIZE = Math.round(($('#main').height() - 40) / NCELL);
-    $('#ChatBoxText')[0].style.height = ($('#main').height() - 161) + 'px';
-
-    $('#GameLog')[0].style.height = ($('#main').height() - 30) + 'px';
-
-
-
     snd = new sound();
     stt = document.getElementById("status");
     stt.textContent = "[READY]"; // set game status to READY
 
-    window.onresize = function(event) {
-        CELL_SIZE = Math.round(($('#main').height() - 40) / NCELL);
-    $('#ChatBoxText')[0].style.height = ($('#main').height() - 141) + 'px';
-    $('#GameLog')[0].style.height = ($('#main').height() - 30) + 'px';
-
-        server.socket.emit('STT', roomID);
-        log('Refreshed the board', 'event');
-        return false;
-    }
-
     $('#F5Button').click(function () {
-        CELL_SIZE = Math.round(($('#main').height() - 40) / NCELL);
         $('#GameBoard').fadeOut();
         $('#GameBoard').fadeIn();
         server.socket.emit('STT', roomID);
-        log('Refreshed the board', 'event');
     });
 
     $('#delete_button').click(function () {
@@ -139,10 +121,15 @@ function runGame(){
     board = document.getElementById("GameBoard"); // get canvas element from page
     board.addEventListener("click", gameBoardOnClick, false); // blind click event to game... function
     drawBoard(); // draw board of game for this first time
-    server = new Server('http://127.0.0.1:8000');
+<<<<<<< HEAD
+    server = new Server('http://caro.nodester.com');
+=======
+    server = new Server("http://127.0.0.1:8000");
+>>>>>>> ccdc9694cb23dc6e5d7bfef57f51e88bfa5f3d3d
     $('#login').submit(setNickName);
 
     // JOIN ROOM
+    server.joinRoom(roomID);
 }
 
 
@@ -189,18 +176,17 @@ function drawBoard() {
 
 function highlight(x, y){
     var context = board.getContext("2d");
-    context.fillStyle = '#FFFF4D';
-    context.fillRect (lastx-CELL_SIZE/2+1,lasty - CELL_SIZE/2+1,CELL_SIZE-1,CELL_SIZE-1);
+    context.fillStyle = 'FFE1FF';
+	context.fillRect (x-CELL_SIZE/2,y - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
 }
 function clearlight( ){
-
-    if(lastx != null && lasty != null){
-        log("erase highlight cell ["+lastx+"]["+lasty+"]", 'annound');
-        var context = board.getContext("2d");
-        context.fillStyle = '#FFFFFF';
-        context.fillRect (lastx-CELL_SIZE/2+1,lasty - CELL_SIZE/2+1,CELL_SIZE-1,CELL_SIZE-1);
-        draw[lastturn](lastx, lasty,COLOR[lastturn]);
-    }
+	if(lastx != null && lasty != null){
+		log("erase highlight cell ["+lastx+"]["+lasty+"]", 'annound');
+		var context = board.getContext("2d");
+		context.fillStyle = 'FFFFFF';
+		context.fillRect (lastx-CELL_SIZE/2,lasty - CELL_SIZE/2,CELL_SIZE,CELL_SIZE);
+		draw[lastturn](lastx, lasty,COLOR[t]);
+	}
 }
 
 
@@ -261,18 +247,5 @@ function winner(pos1, pos2) {
     //board.addEventListener("click", , false);
 }
 
-
-function onBlur() {
-    isFocus = false;
-};
-function onFocus(){
-    isFocus = true;
-};
-
-if (/*@cc_on!@*/false) { // check for Internet Explorer
-    document.onfocusin = onFocus;
-    document.onfocusout = onBlur;
-} else {
-    window.onfocus = onFocus;
-    window.onblur = onBlur;
+function fillCell(x, y, color) {
 }

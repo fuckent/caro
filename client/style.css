@@ -15,18 +15,24 @@ font-family: 'Flavors', cursive;
 }
 
 h1 {
-margin: 0px 20px 20px 0px;
 float:left;
 width: 50%;
 
 }
 p  {
+  font-family: 'Flavors';
+
 font-size: 18px;
 }
 
 #container{
-    padding:20px 40px 40px 60px;
+    position:absolute;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    bottom:30px;
     background: repeating-linear-gradient(top left -45deg, red, red 5px, white 5px, white 10px);
+    margin: 20px;
 }
 
 #Board{
@@ -37,7 +43,7 @@ font-size: 18px;
 }
 #Panel{
     width: 200px;
-    margin: 0px 30px 30px 30px;
+    margin: 0px 0  0 30px;
     padding: 0px 10px 10px 10px;
     float: left;
 }
@@ -50,9 +56,11 @@ font-size: 18px;
 
 }
 
-#GameLog{
-    width:100%;
+#GameLog p {
+  font: 12px Helvetica, Arial;
+}
 
+#GameLog{
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
     border-radius: 6px;
@@ -75,7 +83,6 @@ font-size: 18px;
 
 background-image: -o-linear-gradient(rgb(100,100,100),rgb(200,200,200));
 
-    height: 300px;
     overflow: auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -84,12 +91,6 @@ background-image: -o-linear-gradient(rgb(100,100,100),rgb(200,200,200));
     border:1px solid #eee;
 }
 
-#footer {
-    display: block;
-    float: left;
-    width: 800px;
-    padding: 20px;
-}
 
 #t {
     float:left;
@@ -201,12 +202,32 @@ button.focus {
   margin: 0;
   text-shadow: 0 1px 0 #fff;
 
-  font: 12px Helvetica, Arial;
-
   padding: 5px 10px;
 }
 .scoll p:nth-child(even) {
   background: #f0f0f0;
+}
+
+#FooterBar {
+background: #FAFAFA;
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fafafa',endColorstr='#eaeaea');
+background: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#DADADA));
+background: -moz-linear-gradient(top,#FAFAFA,#EAEAEA);
+background: -o-linear-gradient(top,#FAFAFA,#EAEAEA);
+z-index: 10;
+border-top: 1px solid #CACACA;
+box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
+margin: 0;
+padding:0;
+
+
+display:block;
+
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
 }
 
 #HeaderBar {
@@ -215,17 +236,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=
 background: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EAEAEA));
 background: -moz-linear-gradient(top,#FAFAFA,#EAEAEA);
 background: -o-linear-gradient(top,#FAFAFA,#EAEAEA);
-position: relative;
 z-index: 10;
 border-bottom: 1px solid #CACACA;
 box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
 margin: 0;
-height: 30px;
+height: 25px;
+    line-height: 25px;
+
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
 }
 
 #HeaderBar p {
     float:right;
-    line-height: 30px;
 }
 
 #ChatBox{
@@ -233,7 +259,7 @@ height: 30px;
 }
 
 #ChatBoxText {
-    height: 200px;
+    height: 100%;
     overflow: auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -312,15 +338,71 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
 
     float:right;
     border: 1px solid #DDD;
-    margin: 5px;
-    padding: 5px;
+    padding: 0 0 0 5px;
+
 }
 
 #header{
     display:block;
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
+#header span{
+    font-size:20px;
+
+}
+
+#main{
+    display:block;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    position:absolute;
+    top:96px;
+    bottom: 15px;
+    right:0px;
+    left:0px;
+    padding:0 50px 0 40px;
+}
+#logo{
+    background:url("caroworld.jpg") no-repeat;
+    display:block;
+    width: 100%;
+    height: 480px;
+    margin-left:220px;
+    float:left;
+}
+#Signin{
+    display:block;
+    width: 30%;
+    height: 480px;
+    float:left;
+}
+#Signin p {
+    width: 100%;
+    display:block;
+    float:left;
+}
+
+#signin{
+
+background: #FAFAFA;
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fafafa',endColorstr='#eaeaea');
+background: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EAEAEA));
+background: -moz-linear-gradient(top,#FAFAFA,#EAEAEA);
+background: -o-linear-gradient(top,#FAFAFA,#EAEAEA);
+position: relative;
+z-index: 10;
+border-bottom: 1px solid #CACACA;
+box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
+    float:left;
+    border: 1px solid #DDD;
+    margin: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+
 
 #Log span {
     display: block;
@@ -338,3 +420,70 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
   padding-right: 10px;
 }
 
+#button1 {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+    background-color:#ededed;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-family:arial;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px 40px;
+    margin:5px 0 0 15px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #ffffff;
+
+}
+#button1:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color:#dfdfdf;
+}
+#button1:active {
+    position:relative;
+    top:1px;
+}
+
+#Console {
+    margin: 2px;
+    height: 20px;
+     -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #aaaaaa;
+    display: block;
+}
+
+.signed {
+    padding: 0 0 0 20px;
+}
+
+.typed{
+    white-space: pre-wrap;
+
+}
+
+.Cursor {
+    white-space: pre-wrap;
+}
+
+.Guest {
+    white-space: pre-wrap;
+    }
+
+#FooterBar span {
+font-family: "monospace", "Courier New",'Courier';
+text-shadow: 0 1px 0 blue;
+color: #002BAD;
+    }
